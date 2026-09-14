@@ -1,0 +1,10 @@
+.vscode/
+DAiSEE/
+venv/
+venv312/
+data/
+outputs/
+stage1_landmarks_output/
+*.png
+*.csv
+EOF

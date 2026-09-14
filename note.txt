@@ -1,0 +1,4 @@
+The data we extract for each stage of landmark is atleast 10gb for whole dataset 
+even if we take 3 frames per second and extract landmark for each frame
+
+How i have stopped the extraction, we should try to analyze the data - the raw landmarks
