@@ -101,10 +101,10 @@ class ElearningSurveyApp(ctk.CTk):
         self.status_label.configure(text="Đang nạp AI...", text_color="#d35400")
         try:
             self.models = {
-                "Boredom": joblib.load("outputs/models/RandomForest_Boredom.pkl"),
-                "Engagement": joblib.load("outputs/models/RandomForest_Engagement.pkl"),
-                "Confusion": joblib.load("outputs/models/RandomForest_Confusion.pkl"),
-                "Frustration": joblib.load("outputs/models/RandomForest_Frustration.pkl")
+                "Boredom": joblib.load("outputs/models_tuned2/RandomForest_Boredom_tuned.pkl"),
+                "Engagement": joblib.load("outputs/models_tuned2/XGBoost_Engagement_tuned.pkl"),
+                "Confusion": joblib.load("outputs/models_tuned2/RandomForest_Confusion_tuned.pkl"),
+                "Frustration": joblib.load("outputs/models_tuned2/RandomForest_Frustration_tuned.pkl")
             }
             self.status_label.configure(text="Sẵn sàng", text_color="black")
             self.btn_start.configure(state="normal") # Mở khóa nút bắt đầu
@@ -130,11 +130,6 @@ class ElearningSurveyApp(ctk.CTk):
                             if results.multi_face_landmarks:
                                 face_landmarks = results.multi_face_landmarks[0]
                                 
-                                # TODO: TÍNH TOÁN 20 ĐẶC TRƯNG THỰC TẾ Ở ĐÂY
-                                # Bạn cần gọi hàm tính EAR, MAR, YAW, PITCH của riêng bạn
-                                # Ví dụ: current_features = extract_my_features(face_landmarks)
-                                
-                                # Tạm thời điền mảng 0 để tránh crash nếu bạn chưa kịp viết hàm tính toán
                                 current_features = [0.0] * 20 
                                 
                                 X_input = [current_features]

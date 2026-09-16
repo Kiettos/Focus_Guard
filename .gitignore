@@ -5,6 +5,12 @@ venv312/
 data/
 outputs/
 stage1_landmarks_output/
+temp/
 *.png
 *.csv
-EOF
+train_models.py
+show_matrix.py
+tune_models.py
+models_tuned/
+models_tuned2/
+models/
